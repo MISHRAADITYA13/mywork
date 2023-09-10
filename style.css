@@ -207,7 +207,6 @@ margin-left: 1rem;
     cursor: pointer;
 }
 
-/* Style the dropdown menu */
 .dropdown-content {
     display: none;
     position: absolute;
