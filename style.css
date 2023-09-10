@@ -218,7 +218,7 @@ margin-left: 1rem;
     z-index: 1;
 }
 
-/* Style the links inside the dropdown menu */
+
 .dropdown-content a {
     color: var(--black);
     padding: 12px 16px;
@@ -231,14 +231,14 @@ margin-left: 1rem;
     background-color: #f2f2f2;
 }
 
-/* Show the dropdown menu when the button is hovered over */
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
-/* Style the space div to create the desired space */
+
 .space {
-    width: 30px; /* Adjust the width to control the space */
-    display: inline-block; /* Make it an inline element to occupy horizontal space */
+    width: 30px; 
+    display: inline-block;
 }
 
 
