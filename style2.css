@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-image{
+    background-image: url("Doctors-bro.png");
+    
+    height: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.bg-text{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+h1{
+    font: 1.5em;
+    text-align: center;
+    color: #326432;
+    text-transform: capitalize;
+}
+
+form{
+    margin: 0 auto;
+    width: 70%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border: 1em;
+}
+
+fieldset{
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+
+legend{
+    font-weight: 700;
+}
+
+div + div{
+    margin-top: 1em;
+}
+
+input, textarea{
+    width: 200px;
+    border: 1px solid #999;
+    
+}
+
+textarea{
+    vertical-align: top;
+    height: 12em;
+    resize: vertical;
+}
+
+button{
+    margin: .5em;
+    font-size: 1em;
+    text-transform: capitalize;
+    background-color: #326432;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+#submitbutton{
+    display: flex;
+    justify-content: center;
+}
