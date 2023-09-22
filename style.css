@@ -5,7 +5,7 @@
     --light-color:#F0F0F099A98F;
     --box-shadow:.5rem .5rem 0 rgba(22,160,133,.2);
     --text-shadow: .4rem .4rem 0 rgba(0,0,0, .2);
-    --border:2rem solid #407BFF;
+    --border:2rem solid #92E3A9;
 }
 *{
     font-family: 'Poppins', sans-serif;
@@ -40,7 +40,7 @@ font-size: 1.5rem;
 .btn span{
     padding:.7rem 1rem;
     border-radius: .5rem;
-    background: #407BFF;
+    background: #92E3A9;
     color:aliceblue;
     margin-left: .5rem;
 }
@@ -50,48 +50,52 @@ font-size: 1.5rem;
 
 }
 .btn :hover span{
-color: #407BFF;
+color: #92E3A9;
 background: #fff;
 margin-left: 1rem;
 }
-.header
-{
-    padding:.5rem 9%;
-    position:fixed;
-    top:0;left: 0;right:0;
+.header .logo i{
+    color: var(--green);
+ 
+ 
+ }
+ .header {
+    padding: .5rem 9%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #407BFF;
+    background: #92E3A9;
 }
-.header .logo i{
-   color: var(--green);
 
-
-}
-.header .navbar a{
-    font-size:1.7rem;
-    color: var(--light-color);
+.header .navbar a {
+    font-size: 1.7rem;
+    color: white; /* Change the color to white */
     margin-left: 2rem;
+    text-decoration: none;
 }
-.header .navbar a:hover{
+
+.header .navbar a:hover {
     color: var(--green);
 }
-/* #menu-btn{
-    font-size:2.5rem;
-    border-radius: .5rem;
-    background:#eee;
-    color:var(--green);
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-} */
-/* Add this CSS */
+
+/* ... (rest of your CSS code) ... */
+
+
 .header .navbar {
     display: flex;
     align-items: center;
 }
+/* .header .navbar a{
+    font-size:1.7rem;
+    color: var(--light-color);
+    margin-left: 2rem;
+} */
 
 .header .navbar a {
     font-size: 1.7rem;
@@ -112,8 +116,8 @@ margin-left: 1rem;
 .user-button a {
     display: flex; 
     align-items: center; 
-    background: #407BFF;
-    color: white;
+    background: #92E3A9;
+    color: #5F7161;
     padding: 0.5rem 1rem;
     border-radius: 50%; 
     text-decoration: none;
@@ -138,7 +142,7 @@ margin-left: 1rem;
 }
 
 .logo-image {
-    max-width: 50px;
+    max-width: 100px; 
     height: auto; 
     border-radius: 50px;
 }
@@ -169,14 +173,14 @@ margin-left: 1rem;
 }
 .home .content h3{
     font-size:4.5rem;
-    color: #407BFF;
-        line-height: 1.8;
-    text-shadow: var(--text-shadow);
+    color: #8DB596;
+        line-height: 1;
+   
 
 }
 .home .content p{
     font-size:1.5rem;
-    color:#96C291;
+    color:#698474;
     line-height: 1.8;
     padding:1rem 0;
 
@@ -207,6 +211,7 @@ margin-left: 1rem;
     cursor: pointer;
 }
 
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -224,10 +229,11 @@ margin-left: 1rem;
     display: block;
 }
 
-/* Change color of links on hover */
+
 .dropdown-content a:hover {
     background-color: #f2f2f2;
 }
+
 
 .dropdown:hover .dropdown-content {
     display: block;
