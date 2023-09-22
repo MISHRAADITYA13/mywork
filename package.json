@@ -4,6 +4,7 @@
   "description": "This is our SIH-23 project",
   "main": "profess.html",
   "scripts": {
+    "start": "node ./script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
