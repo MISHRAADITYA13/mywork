@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Document</title>
+    <style>
+        /* CSS to set the background image and adjust opacity */
+        body::before {
+            content: "";
+            background-image: url('images/Doctors-bro.png'); /* Replace with your background image URL */
+            background-size: cover; /* Adjust the background size as needed */
+            background-attachment: fixed; /* Optional: Prevent background from scrolling with content */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.5; /* Adjust the opacity value as needed (0.0 to 1.0) */
+            z-index: -1; /* Place the pseudo-element behind the content */
+        }
+    </style>
+
+    <style>
+        .content {  
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* background-color: red; */
+            border-radius: 10px;
+            display: flex;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            color: #333;
+            height: 300px;
+        }
+        .role-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 80px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-image: linear-gradient(45deg, #ff6f61, #ff8b3d); /* Gradient button background */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-image 0.3s ease;
+        }
+        .button:hover {
+            transform: scale(1.05); /* Slight button scaling on hover */
+            background-image: linear-gradient(45deg, #ff8b3d, #ff6f61); /* Darker gradient on hover */
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            font-size: 24px;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+        <div class="content">
+            <img src="images/logo_main.png" alt="logo" style="width: 230px; height: 230px; border-radius:50%">
+            <div style="margin-top: 100px; margin-left: 230px">
+                <h1>Please Select Your Role!</h1>
+                <div class="role-buttons" style="margin-top:35px;">
+                    <button class="button" id="btn_1">Student</button>
+                    <button class="button" id="btn_2">Practitioner</button>
+                </div>  
+            </div>
+        </div>
+</body>
+</html>
