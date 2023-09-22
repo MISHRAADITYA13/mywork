@@ -6,6 +6,23 @@
     <title>Feedback</title>
     <link rel="stylesheet" href="./patient_details.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="/mywork/button.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".multiselect-input").click(function () {
+                $(".multiselect-options").toggle();
+            });
+
+            $(".multiselect-options input[type='checkbox']").change(function () {
+                const selectedValues = [];
+                $(".multiselect-options input[type='checkbox']:checked").each(function () {
+                    selectedValues.push($(this).val());
+                });
+                $(".multiselect-values").val(selectedValues.join(', '));
+            });
+        });
+    </script>
 
     <style>
         /* CSS to set the background image and adjust opacity */
@@ -20,16 +37,9 @@
             right: 0;
             bottom: 0;
             opacity: 0.5; /* Adjust the opacity value as needed (0.0 to 1.0) */
-            z-index: -1; /* Place the pseudo-element behind the content */
+            z-index: -1; 
             width: 100%;
             min-height: 70%;
-        }
-        #submit_btn{
-            border-radius: 7px;
-            background-color: #FF725E;
-        }
-        #submit_btn:hover{
-            background-color: rgba(0, 0, 0, 0.708);
         }
         #patient_details_form{
             width: 300px;
@@ -47,7 +57,8 @@
     <style>
         .form-group {
             margin-bottom: 20px;
-            width: 300px;
+            margin-left:60px;
+            width: 400px;
         }
         .form-group input,
         .form-group textarea,
@@ -65,15 +76,18 @@
 
         .form-group input[type="text"],
         .form-group input[type="email"],
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select,
+        .form-group input[type="checkbox"] {
             background-color: transparent;
         }
 
         .form-group input[type="text"]:hover,
         .form-group input[type="email"]:hover,
         .form-group textarea:hover,
-        .form-group select:hover {
-            border-color: #FF725E; /* Change color on hover */
+        .form-group select:hover,
+        .form-group input[type="checkbox"]:hover {
+            border-color: #FF725E;
         }
 
         .form-group button {
@@ -86,6 +100,33 @@
         .form-group button:hover {
             background-color: #FF725E;
         }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-image: linear-gradient(45deg, #ff6f61, #ff8b3d); /* Gradient button background */
+            color: #fff;
+            border: none;
+            width: 230px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-image 0.3s ease;
+        }
+        .button:hover {
+            transform: scale(1.05); /* Slight button scaling on hover */
+            background-image: linear-gradient(45deg, #ff8b3d, #ff6f61); /* Darker gradient on hover */
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px; 
+        }
+
     </style>
 </head>
 <body>
@@ -96,105 +137,120 @@
     </div>
       <div class="container" style="width:600px; min-height: 400px;">
         <div style="padding: 10px;">    
-            <center>
-                <form method="post" action="#">
-                    <h1>FEEDBACK FORM</h1> 
-                    <fieldset>
+            <!-- <center> -->
+                <form id="patient_details_form">
+                    <div class="form-group">
+                        <h1>FEEDBACK FORM</h1> 
+                    </div>
+                    <div class="form-group">
+                        <td><input type="text" id="name" name="Doctor name" placeholder="Enter Your Name" placeholder="Doctor's Name" required></td>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="DR-EXPERIENCE" id="Experience" min="0" placeholder="Enter your experience">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="Medicine" name="Medicine" placeholder="Medicine Name" required>
+                    </div>
+                    <div class="form-group" style="width: 500px;">
+                        <label for="symptoms">Choose Symptoms</label>
                         <table>
                             <tr>
-                                <td><input type="text" id="name" name="Doctor name" placeholder="Enter Your Name" placeholder="Doctor's Name" required></td>
+                                <td><input type="checkbox" name="cold" id=""></td>
+                                <td><p>Cold</p></td>
                             </tr>
                             <tr>
-                                <td>
-                                    <input type="number" name="DR-EXPERIENCE" id="Experience" placeholder="Enter your experience">
-                                </td>
+                                <td><input type="checkbox" name="headache" id=""></td>
+                                <td><p>Headache</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="fever" id=""></td>
+                                <td><p>Fever</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="headache" id=""></td>
+                                <td><p>Headache</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="body pain" id=""></td>
+                                <td><p>Body Pain</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="dry mouth" id=""></td>
+                                <td><p>Dry Mouth</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="dizzy" id=""></td>
+                                <td><p>Dizzy</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="short breath" id=""></td>
+                                <td><p>Short Breath</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="tiredness" id=""></td>
+                                <td><p>Tiredness</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="chest pain" id=""></td>
+                                <td><p>Chest Pain</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="chills and shivering" id=""></td>
+                                <td><p>Chills And Shivering</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="vomiting" id=""></td>
+                                <td><p>Vomiting</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="hearing loss" id=""></td>
+                                <td><p>Hearing Loss</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="toothache" id=""></td>
+                                <td><p>Toothache</p></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="nause" id=""></td>
+                                <td><p>Nausea</p></td>
+                            </tr><tr>
+                                <td><input type="checkbox" name="weakness" id=""></td>
+                                <td><p>Weakness</p></td>
+                            </tr><tr>
+                                <td><input type="checkbox" name="abdominal pain" id=""></td>
+                                <td><p>Abdominal Pain</p></td>
+                            </tr><tr>
+                                <td><input type="checkbox" name="bleeding" id=""></td>
+                                <td><p>Bleeding</p></td>
                             </tr>
                         </table>
-                    </fieldset>
-            
-                    <fieldset>
-                        <tr>
-                            <td>
-                                <input type="text" id="text" name="Medicine" placeholder="Medicine Name" required>
-                            </td>
-                        </tr>
-                        <div>
-                            <label for="symptoms">Symptoms:</label>
-                            &nbsp; &nbsp; &nbsp; &nbsp;
-                        <select id="Symptoms" name="Symptoms" required>
-                            <option value="" disabled selected>Select Symptoms</option>
-                            <option value="fever">Fever</option>
-                            <option value="runny nose">Runny nose</option>
-                            <option value="Headache">Headache</option>
-                            <option value="Cough">Cough</option>
-                            <option value="Diabetes">Diabetes</option>
-                            <option value="Hepatitis B">Hepatitis B</option>
-                            <option value="Hepatitis A">Hepatitis A</option>
-                            <option value="High cholesterol">High cholesterol</option>
-                            <option value="Migraine">Migraine</option>
-                            <option value="Diarrhea">Diarrhea</option>
-                            <option value="Eye irritation">Eye irritation</option>
-                            <option value="Cholera">Cholera</option>
-                            <option value="Jaundice">Jaundice</option>
-                            <option value="Urinary Tract Infection">Diarrhea</option> </select>
-                            &nbsp; &nbsp; &nbsp; &nbsp;
-
-                            <select name="duration" id="status">
-                                <option value="" disabled selected>Patient's Gender</option>
-                                <option value="5"> 5days </option>
-                                <option value=">5">more than 5 days</option>
-                                <option value="10"> 10 days</option>
-                                <option value="15">15 days </option>
-                                <option value="1"> 1 month</option>
-                                <option value="2">2 month</option>
-                                <option value="3">3 month</option>
-                                <option value="4"> 4 month</option>
-                                <option value="5">5 month </option>
-                                <option value="6"> 6 month</option>
-                                <option value="1">1 year</option>
-                            </select>
-            
-                            &nbsp; &nbsp; &nbsp; &nbsp;
-                            <tr>
-                            <td>
-                                <input type="text" id="text" name="dosage" placeholder="Enter Dose Amount (in mg)" required>
-                            </td>
-                        </tr>
-                            &nbsp; &nbsp; &nbsp; &nbsp;
-                            
-                            <tr>
-                                <td>
-                                    <input type="text" id="text" name="Medicine" placeholder="enter" required>
-                                </td>
-                            </tr>
-            
-                        </div>
-                    </fieldset>
-            
-                    <fieldset>
-                        <legend>Your Feedback</legend>
-                        <div>
-                            <textarea
-                            id="msg"
-                            name="user_msg"
-                            rows="4"
-                            cols="20"
-                            placeholder="EFFECTIVENESS"></textarea>
-                            &nbsp; &nbsp; &nbsp; &nbsp;
-                            <textarea
-                            id="msg"
-                            name="SIDE EFFECTS(if any)"
-                            rows="4"
-                            cols="20"
-                            placeholder="SIDE EFFECTS(if any)"></textarea>
-                        </div>
-                    </fieldset>
-                       
-                    <div id="submitbutton">
-                        <button type="submit" id="submit">Submit your feedback</button>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="text" name="dosage" placeholder="Enter Dose Amount (in mg)" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea
+                                    id="msg"
+                                    name="user_msg"
+                                    rows="4"
+                                    cols="10"
+                                    placeholder="Effectiveness"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea
+                                    id="msg"
+                                    name="SIDE EFFECTS(if any)"
+                                    rows="4"
+                                    cols="20"
+                                    placeholder="Side Effects (if any)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <!-- <button type="submit" id="submit_btn" style="opacity: 1; width: 150px;">Next Step</button> -->
+                        <button class="button" id="btn_2" style="width:250px; height: 60px; font-size: 22px;">submit</button>
                     </div>
                 </form>
-            </center>
+            <!-- </center> -->
         </div>
     </div>
 </body>

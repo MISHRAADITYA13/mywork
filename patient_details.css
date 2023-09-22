@@ -118,7 +118,7 @@ textarea:focus {
     border-color: #007BFF;
 }
 
-button {
+/* button {
     background-color: #007BFF;
     color: #fff;
     border: none;
@@ -131,4 +131,34 @@ button {
 
 button:hover {
     background-color: #0056b3;
+} */
+
+.multiselect {
+    position: relative;
+    width: 200px;
+}
+
+.multiselect-input {
+    width: 100%;
+    padding: 5px;
+}
+
+.multiselect-options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.multiselect-options li {
+    padding: 5px;
+}
+
+.multiselect-options label {
+    display: block;
 }

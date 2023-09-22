@@ -24,18 +24,35 @@
             width: 100%;
             min-height: 70%;
         }
-        #submit_btn{
+        /* #submit_btn{
             border-radius: 7px;
             background-color: #FF725E;
         }
         #submit_btn:hover{
             background-color: rgba(0, 0, 0, 0.708);
-        }
+        } */
         #patient_details_form{
             width: 300px;
         }
         form *{
             margin: 10px;
+        }
+    </style>
+    <style>
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-image: linear-gradient(45deg, #ff6f61, #ff8b3d); /* Gradient button background */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.9;
+            transition: transform 0.2s ease, background-image 0.3s ease;
+        }
+        .button:hover {
+            transform: scale(1.05); /* Slight button scaling on hover */
+            background-image: linear-gradient(45deg, #ff8b3d, #ff6f61); /* Darker gradient on hover */
         }
     </style>
     <style>
@@ -138,7 +155,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <button type="submit" id="submit_btn" style="opacity: 1; width: 150px;">Next Step</button>
+                        <!-- <button type="submit" id="submit_btn" style="opacity: 1; width: 150px;">Next Step</button> -->
+                        <button class="button" id="btn_2">Next Step</button>
                     </div>
                 </form>
             </center>
