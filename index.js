@@ -4,8 +4,6 @@ const http = require("http");
 const port = 8000;
 const hostname = "localhost";
 
-console.log("temp");
-
 const home = fs.readFileSync("./profession.html","utf-8");
 
 const server = http.createServer((req,res)=>{
@@ -18,7 +16,3 @@ const server = http.createServer((req,res)=>{
 }).listen(port,hostname,()=>{
     console.log(`working at http://${hostname}:${port}`);
 });
-
-// server.listen(port,hostname,()=>{
-//     console.log(`Server is working at http://${hostname}:${port}`);
-// });
