@@ -3,14 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Symptoms</title>
+    <title>Symptom Analysis</title>
+    <link rel="stylesheet" href="./patient_details.css"> <!-- Include the existing CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Additional CSS specific to the symptom analysis page */
+        body::before {
+            content: "";
+            background-image: url('./images/symptoms.svg'); /* Replace with your background image URL */
+            background-size: cover; /* Adjust the background size as needed */
+            background-attachment: fixed; /* Optional: Prevent background from scrolling with content */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.5; /* Adjust the opacity value as needed (0.0 to 1.0) */
+            z-index: -1; /* Place the pseudo-element behind the content */
+            width: 100%;
+            min-height: 70%;
+        }
+        .symptom-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+            max-width: 800px;
+            border-radius: 80px;
+        }
+
+        .symptom-container h1 {
+            color: #FF725E;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .symptom-question {
+            margin: 20px 0;
+        }
+
+        .symptom-question label {
+            display: block;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .symptom-question input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .symptom-question textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .symptom-submit-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .symptom-submit-button button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-image: linear-gradient(45deg, #ff6f61, #ff8b3d);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-image 0.3s ease;
+        }
+
+        .symptom-submit-button button:hover {
+            transform: scale(1.05);
+            background-image: linear-gradient(45deg, #ff8b3d, #ff6f61);
+
+        }
+        .symptom-container {
+    /* margin: 20px; */
+    /* padding: 20px; */
+    background-color: #fff;
+    /* background-color: red; */
+    /* border-radius: 30px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.1;
+    transform: translateY(200px);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
 </head>
 <body>
-    <h1>Symptoms Page</h1>
-
-
-
-
-    <script src="./index.js"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div><img src="./images/patient_details_logo.jpg" alt="logo image" id="logo_home_link" style="cursor: pointer; width: 230px; height: 230px; border-radius: 50%; margin-left: 30px;"></div>
+        <div class="container-fluid" style="margin-left: 50%;">
+          <a class="navbar-brand" href="#" id="home_link">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin: 15px;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="margin: 15px;" id="library_link">Library</a>
+                  </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="symptom-container">
+        <h1>Symptom Analysis</h1>
+        <form id="symptom_analysis_form">
+            <div class="symptom-question">
+                <label for="symptom">Enter the symptom:</label>
+                <textarea id="symptom" name="symptom" rows="4" cols="50" required></textarea>
+            </div>
+            <div class="symptom-question">
+                <label for="duration">Duration (in days):</label>
+                <input type="number" id="duration" name="duration" min="0" required>
+            </div>
+            <!-- Add more symptom-related questions as needed -->
+            <div class="associated-symptom">
+                <label for="associated_symptoms">Associated Symptoms:</label>
+                <textarea
+                    id="associated_symptoms"
+                    name="associated_symptoms"
+                    rows="4"
+                    cols="50"
+                    placeholder="List any associated symptoms here"></textarea>
+            </div>
+            <div class="symptom-submit-button">
+                <button id="submit_symptoms_btn">Proceed</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="./symptom_analysis.js"></script>
 </body>
 </html>
