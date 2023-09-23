@@ -46,8 +46,8 @@ var swiper = new Swiper(".slide-content", {
     // window.open(localFilePath, '_blank');
     window.location.href = localFilePath;
   });
-  document.getElementById('feedback_btn').addEventListener('click', function() {
-    console.log("feedback_btn working")
+  document.getElementById('feedback_link').addEventListener('click', function() {
+    console.log("feedback_link working")
     var localFilePath = './feedback.html';
     // window.open(localFilePath, '_blank');
     window.location.href = localFilePath;

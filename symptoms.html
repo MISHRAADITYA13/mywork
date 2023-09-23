@@ -109,16 +109,19 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div><img src="./images/patient_details_logo.jpg" alt="logo image" id="logo_home_link" style="cursor: pointer; width: 230px; height: 230px; border-radius: 50%; margin-left: 30px;"></div>
+        <div><img src="./images/patient_details_logo.jpg" alt="logo image" id="logo_btn" style="cursor: pointer; width: 230px; height: 230px; border-radius: 50%; margin-left: 30px;"></div>
         <div class="container-fluid" style="margin-left: 50%;">
-          <a class="navbar-brand" href="#" id="home_link">Home</a>
+          <a class="navbar-brand" href="#" id="home_btn">Home</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin: 15px;">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" style="margin: 15px;" id="library_link">Library</a>
+                    <a class="nav-link active" aria-current="page" id="library_btn" href="#" style="margin: 15px;" id="library_link">Library</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" id="feedback_link" href="#" style="margin: 15px;" id="library_link">Feedback</a>
                   </li>
             </ul>
         </div>
@@ -150,6 +153,7 @@
             </div>
         </form>
     </div>
-    <script type="text/javascript" src="./symptom_analysis.js"></script>
+    <script type="text/javascript" src="./symptoms.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
